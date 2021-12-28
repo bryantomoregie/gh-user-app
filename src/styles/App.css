@@ -1,4 +1,28 @@
 .app {
   background-color: #f6f3ff;
-  height: 100vh;
+  height: 100%;
+  overflow: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 10vw;
+}
+
+h1 {
+  font-size: 26px;
+  color: #222731;
+}
+
+h4 {
+  font-size: 13px;
+  font-family: "Space Mono", monospace;
+  display: inline;
+  color: #4b6a9b;
+  letter-spacing: 2.5px;
+  vertical-align: top;
+  margin-right: 1rem;
 }
