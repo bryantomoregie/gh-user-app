@@ -23,7 +23,7 @@ function App() {
           <img alt="moon" src={theme === "DARK" ? moon : sun}></img>
         </div>
       </div>
-      {/* <Search></Search> */}
+      <Search></Search>
     </div>
   );
 }

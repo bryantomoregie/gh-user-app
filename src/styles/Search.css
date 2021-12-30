@@ -1,0 +1,37 @@
+.input {
+  margin-top: 2rem;
+  position: relative;
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+  height: 60px;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.input__search-icon {
+  position: absolute;
+  top: 17px;
+  left: 32px;
+}
+
+.input__button {
+  border: none;
+  background-color: #0079ff;
+  width: 84px;
+  height: 46px;
+  color: white;
+  font-size: 14px;
+  border-radius: 1rem;
+  line-height: 21px;
+  font-weight: bold;
+  position: absolute;
+  top: 6.5px;
+  right: 35px;
+}
