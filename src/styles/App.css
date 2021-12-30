@@ -17,7 +17,7 @@ h1 {
   color: #222731;
 }
 
-h4 {
+.header__theme > h4 {
   font-size: 13px;
   display: inline;
   color: #4b6a9b;

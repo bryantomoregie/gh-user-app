@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Search from "./Search";
+import Main from "./Main";
 import "./styles/App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         </div>
       </div>
       <Search></Search>
+      <Main></Main>
     </div>
   );
 }
