@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "./Search";
 import Main from "./Main";
 import "./styles/App.css";
 
 function App() {
   const [theme, setTheme] = useState("DARK");
+  const [fetchUser, setFetchUser] = useState("Octocat");
+  const [userObject, setUserObject] = useState("");
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${fetchUser}`)
+      .then((response) => response.json())
+      .then((data) => setUserObject(data));
+  }, [fetchUser]);
+
   const moon = "/icon-moon.svg";
   const sun = "/icon-sun.svg";
 
@@ -24,8 +33,8 @@ function App() {
           <img alt="moon" src={theme === "DARK" ? moon : sun}></img>
         </div>
       </div>
-      <Search></Search>
-      <Main></Main>
+      <Search setFetchUser={setFetchUser}></Search>
+      <Main userObject={userObject}></Main>
     </div>
   );
 }

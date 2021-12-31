@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Search.css";
 
-export default function Search() {
+interface SearchProps {
+  setFetchUser: (str: string) => void;
+}
+
+export default function Search({ setFetchUser }: SearchProps) {
+  const [user, setUser] = useState<string>();
   const search = "./icon-search.svg";
+
+  const handleChange = (str: string) => {
+    setUser(str);
+  };
+  const handleClick = () => {
+    if (user === undefined) {
+      return;
+    }
+    setFetchUser(user);
+  };
+
   return (
     <div className="input">
-      <input placeholder="    Search Github username..." />
+      <input
+        placeholder="Search Github username..."
+        value={user}
+        onChange={(e) => handleChange(e.target.value)}
+      />
       <img className="input__search-icon" alt="search icon" src={search} />
-      <button className="input__button">Search</button>
+      <button className="input__button" onClick={() => handleClick()}>
+        Search
+      </button>
     </div>
   );
 }

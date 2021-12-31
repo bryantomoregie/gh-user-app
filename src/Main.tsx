@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { updateLanguageServiceSourceFile } from "typescript";
 import "./styles/Main.css";
 import { getMonth } from "./utils";
 
-export default function Main() {
-  interface UserObject {
-    [key: string]: any;
-  }
+interface UserObject {
+  [key: string]: any;
+}
 
-  const [user, setUser] = useState<UserObject | undefined>();
-
-  useEffect(() => {
-    fetch("https://api.github.com/users/bryantomoregie")
-      .then((response) => response.json())
-      .then((data) => setUser(data));
-  }, []);
-
-  console.log(user);
-
-  const date = new Date(user?.created_at);
+export default function Main({ userObject }: UserObject) {
+  const date = new Date(userObject?.created_at);
   const day = date.getDay();
   const month = getMonth(date.getMonth());
   const year = date.getFullYear();
@@ -32,26 +21,26 @@ export default function Main() {
     <main>
       <div className="container">
         <div className="section1">
-          <img className="section1__img" src={user?.avatar_url} alt="" />
+          <img className="section1__img" src={userObject?.avatar_url} alt="" />
           <div>
-            <h1 className="section1__name">{user?.name}</h1>
-            <h3 className="section1__username">{`@${user?.login}`}</h3>
+            <h1 className="section1__name">{userObject?.name}</h1>
+            <h3 className="section1__username">{`@${userObject?.login}`}</h3>
             <h4 className="section1__date">{`Joined ${day} ${month} ${year}`}</h4>
           </div>
         </div>
-        <h4 className="section2">{user?.bio}</h4>
+        <h4 className="section2">{userObject?.bio}</h4>
         <section className="section3">
           <div className="section3__child">
             <h4 className="section3__child__title">Repos</h4>
-            <h1 className="section3__child__num">{user?.public_repos}</h1>
+            <h1 className="section3__child__num">{userObject?.public_repos}</h1>
           </div>
           <div className="section3__child">
             <h4 className="section3__child__title">Followers</h4>
-            <h1 className="section3__child__num">{user?.followers}</h1>
+            <h1 className="section3__child__num">{userObject?.followers}</h1>
           </div>
           <div className="section3__child">
             <h4 className="section3__child__title">Following</h4>
-            <h1 className="section3__child__num">{user?.following}</h1>
+            <h1 className="section3__child__num">{userObject?.following}</h1>
           </div>
         </section>
         <div className="section4">
@@ -60,7 +49,7 @@ export default function Main() {
               <img src={location} alt="" />
             </div>
             <h4 className="section4__child__text">
-              {user?.location ? user?.location : "Not Available"}
+              {userObject?.location ? userObject?.location : "Not Available"}
             </h4>
           </div>
           <div className="section4__child">
@@ -68,7 +57,7 @@ export default function Main() {
               <img src={website} alt="" />
             </div>
             <h4 className="section4__child__text">
-              {user?.blog ? user?.blog : "Not Available"}
+              {userObject?.blog ? userObject?.blog : "Not Available"}
             </h4>
           </div>
           <div className="section4__child">
@@ -76,8 +65,8 @@ export default function Main() {
               <img src={twitter} alt="" />
             </div>
             <h4 className="section4__child__text">
-              {user?.twitter_username
-                ? user?.twitter_username
+              {userObject?.twitter_username
+                ? userObject?.twitter_username
                 : "Not Available"}
             </h4>
           </div>
@@ -86,7 +75,7 @@ export default function Main() {
               <img src={company} alt="" />
             </div>
             <h4 className="section4__child__text">
-              {user?.company ? user?.company : "Not Available"}
+              {userObject?.company ? userObject?.company : "Not Available"}
             </h4>
           </div>
         </div>
