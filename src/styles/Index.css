@@ -11,3 +11,19 @@ body,
   height: 100%;
   width: 100%;
 }
+
+.light-mode {
+  --app-background: #f6f8fe;
+  --main-text: #222731;
+  --dark-mode: #4b6a9b;
+  --h4-text: #4b6a9b;
+  --button-color: #0079ff;
+}
+
+.dark-mode {
+  --app-background: #141d24;
+  --main-text: #fff;
+  --dark-mode: #fff;
+  --h4-text: #fff;
+  --button-color: #0079ff;
+}
