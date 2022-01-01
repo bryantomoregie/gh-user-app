@@ -5,10 +5,9 @@ import { useTheme } from "./provider";
 import "./styles/App.css";
 
 function App() {
-  const [themes, setTheme] = useState("DARK");
   const [fetchUser, setFetchUser] = useState("Octocat");
   const [userObject, setUserObject] = useState("");
-  const theme = useTheme();
+  const { mode, setMode } = useTheme();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${fetchUser}`)
@@ -20,19 +19,21 @@ function App() {
   const sun = "/icon-sun.svg";
 
   const handleClick = () => {
-    if (themes === "LIGHT") {
-      setTheme("DARK");
+    if (mode === "light-mode") {
+      setMode("dark-mode");
+      localStorage.setItem("mode", "dark-mode");
     } else {
-      setTheme("LIGHT");
+      setMode("light-mode");
+      localStorage.setItem("mode", "light-mode");
     }
   };
   return (
-    <div className={`app ${theme}`}>
+    <div className={`app ${mode}`}>
       <div className="header">
         <h1>devfinder</h1>
         <div className="header__theme" onClick={() => handleClick()}>
-          <h4>{theme}</h4>
-          <img alt="moon" src={theme === "DARK" ? moon : sun}></img>
+          <h4>{mode === "dark-mode" ? "LIGHT" : "DARK"}</h4>
+          <img alt="moon" src={mode === "dark-mode" ? sun : moon}></img>
         </div>
       </div>
       <Search setFetchUser={setFetchUser}></Search>

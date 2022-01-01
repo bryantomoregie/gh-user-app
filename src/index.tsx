@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProvider } from "./provider";
+import { ThemeProvider, ThemeMode } from "./provider";
 import "./styles/Index.css";
+
+const colorScheme = (localStorage.getItem("mode") as ThemeMode) ?? "light-mode";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ThemeProvider theme={colorScheme}>
       <App />
     </ThemeProvider>
   </React.StrictMode>,
