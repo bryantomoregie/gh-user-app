@@ -1,5 +1,5 @@
 main {
-  background-color: #fff;
+  background-color: var(--body-background);
   margin: 0 auto;
   margin-top: 30px;
   width: 85%;
@@ -37,7 +37,7 @@ h3 {
 }
 
 .section1__date {
-  color: #697c9a;
+  color: var(--date-color);
   font-weight: 400;
 }
 
@@ -50,11 +50,11 @@ h3 {
 
 .section3 {
   margin-top: 30px;
-  background-color: #f6f8ff;
+  background-color: var(--app-background);
   display: flex;
   justify-content: space-around;
   font-weight: 400;
-  color: #4b6a9b;
+  color: var(--main-text);
   font-size: 11px;
   padding: 18px 14px;
   border-radius: 1rem;
@@ -77,7 +77,7 @@ h3 {
 
 .section4__child__text {
   display: inline;
-  color: #4b6a9b;
+  color: var(--h4-text);
   vertical-align: top;
 }
 

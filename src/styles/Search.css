@@ -15,6 +15,12 @@ input {
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   padding-left: 40px;
   padding-right: 100px;
+  background-color: var(--body-background);
+  color: var(--main-text);
+}
+
+::placeholder {
+  color: var(--main-text);
 }
 
 .input__search-icon {

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Search from "./Search";
 import Main from "./Main";
+import { useTheme } from "./provider";
 import "./styles/App.css";
 
 function App() {
-  const [theme, setTheme] = useState("DARK");
+  const [themes, setTheme] = useState("DARK");
   const [fetchUser, setFetchUser] = useState("Octocat");
   const [userObject, setUserObject] = useState("");
+  const theme = useTheme();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${fetchUser}`)
@@ -18,14 +20,14 @@ function App() {
   const sun = "/icon-sun.svg";
 
   const handleClick = () => {
-    if (theme === "LIGHT") {
+    if (themes === "LIGHT") {
       setTheme("DARK");
     } else {
       setTheme("LIGHT");
     }
   };
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
       <div className="header">
         <h1>devfinder</h1>
         <div className="header__theme" onClick={() => handleClick()}>

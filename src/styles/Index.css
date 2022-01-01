@@ -18,6 +18,8 @@ body,
   --dark-mode: #4b6a9b;
   --h4-text: #4b6a9b;
   --button-color: #0079ff;
+  --body-background: #fff;
+  --date-color: #697c9a;
 }
 
 .dark-mode {
@@ -26,4 +28,6 @@ body,
   --dark-mode: #fff;
   --h4-text: #fff;
   --button-color: #0079ff;
+  --body-background: #1e2a47;
+  --date-color: #fff;
 }
