@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./styles/Main.css";
 import { getMonth } from "./utils";
 
@@ -56,7 +56,7 @@ export default function Main({ userObject }: UserObject) {
             <div className="icon">
               <img src={website} alt="" />
             </div>
-            <h4 className="section4__child__text">
+            <h4 className="section4__child__text website">
               {userObject?.blog ? userObject?.blog : "Not Available"}
             </h4>
           </div>
@@ -67,7 +67,7 @@ export default function Main({ userObject }: UserObject) {
             <h4 className="section4__child__text">
               {userObject?.twitter_username
                 ? userObject?.twitter_username
-                : "Not Available"}
+                : test("twitterRef")}
             </h4>
           </div>
           <div className="section4__child">
