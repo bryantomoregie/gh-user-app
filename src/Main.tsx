@@ -67,7 +67,7 @@ export default function Main({ userObject }: UserObject) {
             <h4 className="section4__child__text">
               {userObject?.twitter_username
                 ? userObject?.twitter_username
-                : test("twitterRef")}
+                : "Not Available"}
             </h4>
           </div>
           <div className="section4__child">
