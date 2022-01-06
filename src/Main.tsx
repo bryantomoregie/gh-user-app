@@ -20,61 +20,137 @@ export default function Main({ userObject }: UserObject) {
   return (
     <main>
       <div className="container">
-        <div className="section1">
-          <img className="section1__img" src={userObject?.avatar_url} alt="" />
+        <div className="userInfo">
+          <img className="userInfo__img" src={userObject?.avatar_url} alt="" />
           <div>
-            <h1 className="section1__name">{userObject?.name}</h1>
-            <h3 className="section1__username">{`@${userObject?.login}`}</h3>
-            <h4 className="section1__date">{`Joined ${day} ${month} ${year}`}</h4>
+            <h1 className="userInfo__name">{userObject?.name}</h1>
+            <h3 className="userInfo__username">{`@${userObject?.login}`}</h3>
+            <h4 className="userInfo__date">{`Joined ${day} ${month} ${year}`}</h4>
           </div>
         </div>
-        <h4 className="section2">{userObject?.bio}</h4>
-        <section className="section3">
-          <div className="section3__child">
-            <h4 className="section3__child__title">Repos</h4>
-            <h1 className="section3__child__num">{userObject?.public_repos}</h1>
+        <h4 className="userBio">{userObject?.bio}</h4>
+        <section className="userData">
+          <div className="userData__child">
+            <h4 className="userData__child__title">Repos</h4>
+            <h1 className="userData__child__num">{userObject?.public_repos}</h1>
           </div>
-          <div className="section3__child">
-            <h4 className="section3__child__title">Followers</h4>
-            <h1 className="section3__child__num">{userObject?.followers}</h1>
+          <div className="userData__child">
+            <h4 className="userData__child__title">Followers</h4>
+            <h1 className="userData__child__num">{userObject?.followers}</h1>
           </div>
-          <div className="section3__child">
-            <h4 className="section3__child__title">Following</h4>
-            <h1 className="section3__child__num">{userObject?.following}</h1>
+          <div className="userData__child">
+            <h4 className="userData__child__title">Following</h4>
+            <h1 className="userData__child__num">{userObject?.following}</h1>
           </div>
         </section>
-        <div className="section4">
-          <div className="section4__child">
+        <div className="userDetails">
+          <div className="userDetails__child">
             <div className="icon">
-              <img src={location} alt="" />
+              <img
+                style={
+                  userObject?.location
+                    ? undefined
+                    : {
+                        opacity: 0.3,
+                      }
+                }
+                src={location}
+                alt=""
+              />
             </div>
-            <h4 className="section4__child__text">
+            <h4
+              style={
+                userObject?.location
+                  ? undefined
+                  : {
+                      opacity: 0.3,
+                    }
+              }
+              className="userDetails__child__text"
+            >
               {userObject?.location ? userObject?.location : "Not Available"}
             </h4>
           </div>
-          <div className="section4__child">
+          <div className="userDetails__child">
             <div className="icon">
-              <img src={website} alt="" />
+              <img
+                style={
+                  userObject?.blog
+                    ? undefined
+                    : {
+                        opacity: 0.3,
+                      }
+                }
+                src={website}
+                alt=""
+              />
             </div>
-            <h4 className="section4__child__text website">
+            <h4
+              style={
+                userObject?.blog
+                  ? undefined
+                  : {
+                      opacity: 0.3,
+                    }
+              }
+              className="userDetails__child__text website"
+            >
               {userObject?.blog ? userObject?.blog : "Not Available"}
             </h4>
           </div>
-          <div className="section4__child">
+          <div className="userDetails__child">
             <div className="icon">
-              <img src={twitter} alt="" />
+              <img
+                style={
+                  userObject?.twitter
+                    ? undefined
+                    : {
+                        opacity: 0.3,
+                      }
+                }
+                src={twitter}
+                alt=""
+              />
             </div>
-            <h4 className="section4__child__text">
+            <h4
+              style={
+                userObject?.twitter
+                  ? undefined
+                  : {
+                      opacity: 0.3,
+                    }
+              }
+              className="userDetails__child__text"
+            >
               {userObject?.twitter_username
                 ? userObject?.twitter_username
                 : "Not Available"}
             </h4>
           </div>
-          <div className="section4__child">
+          <div className="userDetails__child">
             <div className="icon">
-              <img src={company} alt="" />
+              <img
+                style={
+                  userObject?.company
+                    ? undefined
+                    : {
+                        opacity: 0.3,
+                      }
+                }
+                src={company}
+                alt=""
+              />
             </div>
-            <h4 className="section4__child__text">
+            <h4
+              style={
+                userObject?.company
+                  ? undefined
+                  : {
+                      opacity: 0.3,
+                    }
+              }
+              className="userDetails__child__text"
+            >
               {userObject?.company ? userObject?.company : "Not Available"}
             </h4>
           </div>

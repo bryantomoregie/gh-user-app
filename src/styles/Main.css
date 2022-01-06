@@ -14,41 +14,41 @@ h3 {
   font-size: 13px;
 }
 
-.section1 {
+.userInfo {
   display: flex;
 }
 
-.section1__name,
-.section3__child__num {
+.userInfo__name,
+.userData__child__num {
   font-size: 16px;
 }
 
-.section1__img {
+.userInfo__img {
   height: 70px;
   width: auto;
   border-radius: 50%;
   margin-right: 19px;
 }
 
-.section1__username {
+.userInfo__username {
   color: #0079ff;
   font-weight: 400;
   margin-bottom: 6px;
 }
 
-.section1__date {
+.userInfo__date {
   color: var(--date-color);
   font-weight: 400;
 }
 
-.section2 {
+.userBio {
   font-weight: 400;
   line-height: 25px;
   color: var(--h4-text);
   margin-top: 30px;
 }
 
-.section3 {
+.userData {
   margin-top: 30px;
   background-color: var(--app-background);
   display: flex;
@@ -60,22 +60,22 @@ h3 {
   border-radius: 1rem;
 }
 
-.section3__child {
+.userData__child {
   text-align: center;
 }
 
-.section3__child__title,
-.section4__child__text {
+.userData__child__title,
+.userDetails__child__text {
   font-weight: 400;
 }
 
-.section4 {
+.userDetails {
   margin-top: 30px;
   display: grid;
   gap: 10px;
 }
 
-.section4__child__text {
+.userDetails__child__text {
   display: inline;
   color: var(--h4-text);
   vertical-align: top;
@@ -88,4 +88,8 @@ h3 {
 
 .website:hover {
   text-decoration: underline;
+}
+
+.undefinedData {
+  color: var(--unavailable);
 }
