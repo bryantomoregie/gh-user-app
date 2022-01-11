@@ -27,9 +27,12 @@ export default function Search({ setFetchUser }: SearchProps) {
         onChange={(e) => handleChange(e.target.value)}
       />
       <img className="input__search-icon" alt="search icon" src={search} />
-      <button className="input__button" onClick={() => handleClick()}>
-        Search
-      </button>
+      <div className="input__search-block">
+        <h4 className="input__search-error">No Results</h4>
+        <button className="input__button" onClick={() => handleClick()}>
+          Search
+        </button>
+      </div>
     </div>
   );
 }

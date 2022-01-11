@@ -39,7 +39,11 @@ input {
   border-radius: 1rem;
   line-height: 21px;
   font-weight: bold;
+}
+
+.input__search-block {
   position: absolute;
   top: 6.5px;
   right: 35px;
+  display: flex;
 }

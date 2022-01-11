@@ -11,8 +11,18 @@ function App() {
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${fetchUser}`)
-      .then((response) => response.json())
-      .then((data) => setUserObject(data));
+      .then((response) => {
+        if (!response.ok) {
+          return Promise.reject(response.status);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data) {
+          setUserObject(data);
+        }
+      })
+      .catch(() => null);
   }, [fetchUser]);
 
   const moon = "/icon-moon.svg";
