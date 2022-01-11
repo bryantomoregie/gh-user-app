@@ -47,3 +47,9 @@ input {
   right: 35px;
   display: flex;
 }
+
+.input__search-error {
+  padding-top: 14px;
+  padding-right: 12px;
+  color: var(--no-results);
+}

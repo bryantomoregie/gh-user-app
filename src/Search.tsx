@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import "./styles/Search.css";
 
 interface SearchProps {
+  unavailable: boolean;
   setFetchUser: (str: string) => void;
+  setUnavailable: (bool: boolean) => void;
 }
 
-export default function Search({ setFetchUser }: SearchProps) {
+export default function Search({
+  setUnavailable,
+  setFetchUser,
+  unavailable,
+}: SearchProps) {
   const [user, setUser] = useState<string>();
   const search = "./icon-search.svg";
 
   const handleChange = (str: string) => {
+    setUnavailable(false);
     setUser(str);
   };
   const handleClick = () => {
@@ -28,7 +35,12 @@ export default function Search({ setFetchUser }: SearchProps) {
       />
       <img className="input__search-icon" alt="search icon" src={search} />
       <div className="input__search-block">
-        <h4 className="input__search-error">No Results</h4>
+        <h4
+          style={{ display: unavailable ? "block" : "none" }}
+          className="input__search-error"
+        >
+          No Results
+        </h4>
         <button className="input__button" onClick={() => handleClick()}>
           Search
         </button>

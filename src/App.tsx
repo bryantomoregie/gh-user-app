@@ -7,6 +7,7 @@ import "./styles/App.css";
 function App() {
   const [fetchUser, setFetchUser] = useState("Octocat");
   const [userObject, setUserObject] = useState("");
+  const [unavailable, setUnavailable] = useState(false);
   const { mode, setMode } = useTheme();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function App() {
           setUserObject(data);
         }
       })
-      .catch(() => null);
+      .catch(() => setUnavailable(true));
   }, [fetchUser]);
 
   const moon = "/icon-moon.svg";
@@ -46,7 +47,11 @@ function App() {
           <img alt="moon" src={mode === "dark-mode" ? sun : moon}></img>
         </div>
       </div>
-      <Search setFetchUser={setFetchUser}></Search>
+      <Search
+        setUnavailable={setUnavailable}
+        unavailable={unavailable}
+        setFetchUser={setFetchUser}
+      ></Search>
       <Main userObject={userObject}></Main>
     </div>
   );
