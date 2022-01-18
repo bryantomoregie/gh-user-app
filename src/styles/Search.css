@@ -53,3 +53,7 @@ input {
   padding-right: 12px;
   color: var(--no-results);
 }
+
+.undefinedButton {
+  background-color: var(--error-button);
+}

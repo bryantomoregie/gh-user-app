@@ -43,8 +43,14 @@ function App() {
       <div className="header">
         <h1>devfinder</h1>
         <div className="header__theme" onClick={() => handleClick()}>
-          <h4>{mode === "dark-mode" ? "LIGHT" : "DARK"}</h4>
-          <img alt="moon" src={mode === "dark-mode" ? sun : moon}></img>
+          <h4 className="header__theme--text">
+            {mode === "dark-mode" ? "LIGHT" : "DARK"}
+          </h4>
+          <img
+            className="header__theme--img"
+            alt="moon"
+            src={mode === "dark-mode" ? sun : moon}
+          ></img>
         </div>
       </div>
       <Search

@@ -17,11 +17,18 @@ h1 {
   color: var(--main-text);
 }
 
-.header__theme > h4 {
+.header__theme {
+  color: var(--h4-text);
+}
+
+.header__theme--text {
   font-size: 13px;
   display: inline;
-  color: var(--h4-text);
   letter-spacing: 2.5px;
   vertical-align: top;
   margin-right: 1rem;
+}
+
+.header__theme:hover {
+  color: var(--hover);
 }

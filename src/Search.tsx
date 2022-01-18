@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./styles/Search.css";
 
 interface SearchProps {
@@ -13,11 +13,13 @@ export default function Search({
   unavailable,
 }: SearchProps) {
   const [user, setUser] = useState<string>();
+  const button = useRef<HTMLButtonElement>(null);
   const search = "./icon-search.svg";
 
   const handleChange = (str: string) => {
     setUnavailable(false);
     setUser(str);
+    button.current?.classList.remove("undefinedButton");
   };
   const handleClick = () => {
     if (user === undefined) {
@@ -25,6 +27,10 @@ export default function Search({
     }
     setFetchUser(user);
   };
+
+  if (unavailable) {
+    button.current?.classList.add("undefinedButton");
+  }
 
   return (
     <div className="input">
@@ -41,7 +47,11 @@ export default function Search({
         >
           No Results
         </h4>
-        <button className="input__button" onClick={() => handleClick()}>
+        <button
+          ref={button}
+          className="input__button"
+          onClick={() => handleClick()}
+        >
           Search
         </button>
       </div>
