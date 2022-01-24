@@ -11,7 +11,7 @@ main {
 
 h4,
 h3 {
-  font-size: 13px;
+  font-size: clamp(13px, 2vw, 16px);
 }
 
 .userInfo {
@@ -20,11 +20,11 @@ h3 {
 
 .userInfo__name,
 .userData__child__num {
-  font-size: 16px;
+  font-size: clamp(16px, 2.5vw, 26px);
 }
 
 .userInfo__img {
-  height: 70px;
+  height: clamp(70px, 15vw, 117px);
   width: auto;
   border-radius: 50%;
   margin-right: 19px;
@@ -92,4 +92,10 @@ h3 {
 
 .undefinedData {
   color: var(--unavailable);
+}
+
+@media (min-width: 500px) {
+  .userDetails {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

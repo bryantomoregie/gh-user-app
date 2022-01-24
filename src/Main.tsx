@@ -159,3 +159,9 @@ export default function Main({ userObject }: UserObject) {
     </main>
   );
 }
+
+/*
+Essentially everything needs to grow as screen size grows. 
+Avi is done. Clamp for everything else as well. 
+Also, the search bar thing needs to be done
+*/
