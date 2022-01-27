@@ -22,9 +22,11 @@ export default function Main({ userObject }: UserObject) {
       <div className="container">
         <div className="userInfo">
           <img className="userInfo__img" src={userObject?.avatar_url} alt="" />
-          <div>
-            <h1 className="userInfo__name">{userObject?.name}</h1>
-            <h3 className="userInfo__username">{`@${userObject?.login}`}</h3>
+          <div className="userInfo__parent">
+            <div>
+              <h1 className="userInfo__name">{userObject?.name}</h1>
+              <h3 className="userInfo__username">{`@${userObject?.login}`}</h3>
+            </div>
             <h4 className="userInfo__date">{`Joined ${day} ${month} ${year}`}</h4>
           </div>
         </div>
@@ -159,9 +161,3 @@ export default function Main({ userObject }: UserObject) {
     </main>
   );
 }
-
-/*
-Essentially everything needs to grow as screen size grows. 
-Avi is done. Clamp for everything else as well. 
-Also, the search bar thing needs to be done
-*/

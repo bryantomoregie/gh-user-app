@@ -1,6 +1,7 @@
 .input {
   margin-top: 2rem;
   position: relative;
+  /* max-width: 1000px; */
 }
 
 input {
